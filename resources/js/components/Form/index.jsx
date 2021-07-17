@@ -58,7 +58,7 @@ class Form extends Component {
                     <label htmlFor="">Outra estatistica:</label>
                     <input type="checkbox" value={this.state.other} onClick={(() => { this.setState({ other: !this.state.other }) } ).bind(this)}/>
                 </div>
-                <button type="button" onClick={this.handleCreateFeedback}>Salvar Informações</button>
+                <button type="button" className="Form__button" onClick={this.handleCreateFeedback}>Salvar Informações</button>
             </form>
         );
     }

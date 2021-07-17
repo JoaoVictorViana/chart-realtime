@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/feedback', 'App\Http\Controllers\FeedbackController@store');
+Route::get('/feedbacks', 'App\Http\Controllers\FeedbackController@show');

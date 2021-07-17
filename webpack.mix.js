@@ -12,4 +12,5 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/components/Form/index.jsx', 'public/js/components/Form/')
+    .js('resources/js/components/Chart/index.jsx', 'public/js/components/Chart/')
     .sass('resources/css/index.scss', 'public/css').react();

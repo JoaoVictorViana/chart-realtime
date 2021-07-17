@@ -189,6 +189,7 @@ var Form = /*#__PURE__*/function (_Component) {
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
           type: "button",
+          className: "Form__button",
           onClick: this.handleCreateFeedback,
           children: "Salvar Informa\xE7\xF5es"
         })]

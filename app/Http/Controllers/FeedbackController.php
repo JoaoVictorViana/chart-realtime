@@ -17,4 +17,15 @@ class FeedbackController extends Controller
 
         return response()->json(true);
     }
+
+    public function show() {
+        $teste = [
+            [
+                'name' => 'teste',
+                'like' => count( Feedback::where('like', 1)->get() ),
+                'other' => count( Feedback::where('other', 1)->get() )
+            ]
+        ];
+        return response()->json($teste);
+    }
 }

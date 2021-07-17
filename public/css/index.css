@@ -1,9 +1,13 @@
 .Form {
   display: flex;
   flex-direction: column;
+  width: 30vw;
 }
 .Form__group {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.Form__button {
+  width: 50%;
 }
