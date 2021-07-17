@@ -1,0 +1,9 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+}
+.Form__group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
