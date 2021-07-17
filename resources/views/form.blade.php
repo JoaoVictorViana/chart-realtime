@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
+    
     <title>Feedback</title>
 </head>
 <body>
-    <div id="Form"></div>
+    <div id="Form" data-token="{{ csrf_token() }}"></div>
 
     <script src="{{ url('/js/components/Form/index.js') }}"></script>
 </body>
