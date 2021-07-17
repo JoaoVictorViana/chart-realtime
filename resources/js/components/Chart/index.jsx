@@ -1,6 +1,30 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {BarChart , XAxis, Bar, YAxis} from 'recharts';
+import Echo from 'laravel-echo';
+import Pusher from 'pusher-js';
+
+// window.Pusher = require('pusher-js');
+
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: '4d2196525ad745969024',
+//     cluster: 'us2',
+//     // encrypted: true,
+// });
+
+// window.Echo.channel(`feedbacks`)
+//     .listen('ServerExample', (e) => {
+//         console.log(e);
+//     });
+
+Pusher.logToConsole = true;
+
+var pusher = new Pusher('4d2196525ad745969024', {
+    cluster: 'us2'
+});
+
+
 
 class Charts extends Component {
     constructor(props){
@@ -26,11 +50,19 @@ class Charts extends Component {
     }
 
     componentDidMount() {
-       this.getDatas();
+        this.getDatas();
+        var channel = pusher.subscribe('feedbacks');
+        channel.bind('feedback-events', (function(data) {
+            console.log()
+            if (data) {
+                this.setState({
+                    data: data.feedbacks
+                });
+            }
+        }).bind(this));
     }
 
     render() {
-        console.log(this.state.data);
         return (
             <BarChart 
                 width={400}
